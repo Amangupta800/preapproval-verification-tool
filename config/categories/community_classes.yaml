@@ -1,0 +1,94 @@
+category: community_classes
+display_name: "Community Class"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - class_name
+  - provider_name
+  - website_url
+  - subject_area
+  - fee_per_session
+  - duration_per_session
+
+checklist:
+  - id: open_to_public
+    label: "Class is open to and attended by the broader public"
+    verifiable: website
+
+  - id: published_fees
+    label: "Class has published fees"
+    verifiable: website
+
+  - id: identical_pricing
+    label: "Fees are identical for OPWDD and non-OPWDD individuals"
+    verifiable: website
+    note: "Website can rarely prove this positively — mark 'Needs Review' unless site shows explicit two-tier pricing that contradicts it"
+
+  - id: subject_based
+    label: "Class is subject-based (Art, Dance, Martial Arts, Cooking, etc.)"
+    verifiable: website
+
+  - id: no_college_credit
+    label: "Class does not provide college credits"
+    verifiable: website
+
+  - id: not_clinical
+    label: "Class is not clinical/therapy in nature"
+    verifiable: website
+
+  - id: schedule_published
+    label: "A published schedule of the class exists"
+    verifiable: website
+
+  - id: fee_match
+    label: "Published fee matches Fee per Session stated on form"
+    verifiable: website
+
+  # Internal items — website cannot verify these, must be flagged not guessed
+  - id: budget_approved
+    label: "Community classes currently approved in the budget"
+    verifiable: internal
+
+  - id: community_inclusion
+    label: "Class provides opportunity for community inclusion"
+    verifiable: internal
+
+  - id: health_safety
+    label: "Class accommodates individual's health/safety needs"
+    verifiable: internal
+
+  - id: independence
+    label: "Class increases independence or substitutes for human assistance"
+    verifiable: internal
+
+  - id: exclusive_benefit
+    label: "Class is NOT provided exclusively for the participant's benefit"
+    verifiable: internal
+
+  - id: dd_only_setting
+    label: "Class is NOT in a setting accessed only by people with DD"
+    verifiable: internal
+
+  - id: staff_run
+    label: "Class is NOT run by OPWDD/provider-agency staff in official capacity"
+    verifiable: internal
+
+  - id: opwdd_grounds
+    label: "Class is NOT located on grounds where OPWDD services are normally provided"
+    verifiable: internal
+
+  - id: medicaid_duplicate
+    label: "Class does NOT duplicate Medicaid state plan/HCBS waiver services"
+    verifiable: internal
+
+  - id: education_duplicate
+    label: "Class does NOT duplicate Board of Education services"
+    verifiable: internal
+
+  - id: direct_reimbursement
+    label: "Class is NOT being reimbursed directly (or W9 attached)"
+    verifiable: internal
+
+invoice_rule: ">2 sessions/day (≤60 min each) or >7 sessions/week at one provider requires prior approval"

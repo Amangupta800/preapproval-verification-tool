@@ -1,0 +1,46 @@
+category: transition_program
+display_name: "Transition Program"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - program_name
+  - provider_name
+  - website_url
+  - fee_per_course
+  - fee_per_month
+
+checklist:
+  - id: published_fees
+    label: "Published fees exist"
+    verifiable: website
+
+  - id: fee_sanity_check
+    label: "Fee within program cap (≤$350/course or ≤$800/month)"
+    verifiable: website
+
+  - id: noncredit_skill_building
+    label: "Program is noncredit-bearing and oriented to skill-building/employment outcomes"
+    verifiable: website
+
+  - id: not_opwdd_location
+    label: "Program is NOT in an OPWDD-certified location"
+    verifiable: website
+
+  - id: staff_background_check
+    label: "Staff background-screening proven by letter"
+    verifiable: internal
+    note: "Proven by a letter, not the website — flag as 'needs document' regardless of website findings"
+
+  - id: budget_approved
+    label: "Transition Program currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
+
+program_caps:
+  per_course: 350
+  per_month: 800

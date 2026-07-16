@@ -1,0 +1,63 @@
+{
+  "url": "https://gallopnyc.org/recreational-riding",
+  "capture_timestamp": "2026-07-16_06-19-09",
+  "full_page_screenshot": "output/evidence/full_page_2026-07-16_06-19-09.png",
+  "verification_results": [
+    {
+      "id": "open_to_public",
+      "status": "Met",
+      "note": "The class is open to and attended by the broader public.",
+      "supporting_quote": "offer a limited number of riding lessons to the public",
+      "evidence_screenshot": "output/evidence/evidence_open_to_public_2026-07-16_06-19-19.png"
+    },
+    {
+      "id": "published_fees",
+      "status": "Met",
+      "note": "The class has published fees.",
+      "supporting_quote": "30-Minute Group - $80",
+      "evidence_screenshot": "output/evidence/evidence_published_fees_2026-07-16_06-19-22.png"
+    },
+    {
+      "id": "identical_pricing",
+      "status": "Needs Review",
+      "note": "The website does not show separate pricing for OPWDD and non-OPWDD individuals.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    },
+    {
+      "id": "subject_based",
+      "status": "Met",
+      "note": "The class is subject-based on horsemanship.",
+      "supporting_quote": "horsemanship program, not a drop-in stable",
+      "evidence_screenshot": "output/evidence/evidence_subject_based_2026-07-16_06-19-25.png"
+    },
+    {
+      "id": "no_college_credit",
+      "status": "Met",
+      "note": "The class does not provide college credits.",
+      "supporting_quote": "no mention of college credits",
+      "evidence_screenshot": "output/evidence/evidence_no_college_credit_2026-07-16_06-19-29.png"
+    },
+    {
+      "id": "not_clinical",
+      "status": "Met",
+      "note": "The class is not clinical/therapy in nature.",
+      "supporting_quote": "limited number of riding lessons to the public",
+      "evidence_screenshot": "output/evidence/evidence_not_clinical_2026-07-16_06-19-38.png"
+    },
+    {
+      "id": "schedule_published",
+      "status": "Needs Review",
+      "note": "The website does not specify a published class schedule.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    },
+    {
+      "id": "fee_match",
+      "status": "Met",
+      "note": "Published fee matches the fee per session stated on the form.",
+      "supporting_quote": "30-Minute Group - $80",
+      "evidence_screenshot": "output/evidence/evidence_fee_match_2026-07-16_06-19-40.png"
+    }
+  ]
+}

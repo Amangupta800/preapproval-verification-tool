@@ -1,59 +1,125 @@
-# Pre-Approval Website-Verification Tool — Build Challenge
+# Pre-Approval Website-Verification Tool
 
-**F5 Global Talent — AI Specialist evaluation project**
+An AI-assisted tool that reads completed pre-approval application forms (PDF), verifies the request against the provider's public website, captures date-stamped evidence, and produces a review-ready report — for a human Pre-Approvals Reviewer to make the final decision.
 
-You've been invited to this challenge because you're in the F5 Global Talent AI Specialist Pool. This is a real business problem from one of our clients, a NY-based human-services agency. We want to see how you turn a messy, real-world workflow into a clean, working AI tool.
+**This tool does not approve or deny anything.** It gathers evidence and flags items for review.
 
----
+## How it works
 
-## The project in one paragraph
+1. **Extract** — reads a PDF application, pulls structured fields (participant, provider, item, fee, checklist answers) using an LLM.
+2. **Verify** — visits the provider's website, checks each website-verifiable checklist item, and captures evidence (whole-page screenshot + a labeled, highlighted screenshot per confirmed item), each burned with a visible timestamp and URL.
+3. **Report** — generates a markdown report: request summary, rate comparison, per-criterion findings table, internal (non-website-verifiable) items, and the evidence appendix.
 
-The client's staff review purchase-approval applications for a government-funded disability program. Before certain purchases (a community class, a gym membership, a household item, a coaching course, etc.) can be approved, a reviewer must open the provider's public website and confirm the item is real and open to the public at a published price — then save date-stamped screenshot/PDF evidence for audits. Today that's done by hand, one site at a time. **Your job: build an AI tool that reads a completed application form (PDF), does the website research, captures the evidence, and produces a review-ready report.**
+## Requirements
 
-A human always makes the final approve/deny decision. Honest "couldn't verify this" results are correct and expected.
+- Python 3.12+
+- An OpenAI API key set as `OPENAI_API_KEY`
+- Playwright with Chromium installed (`pip3 install playwright && playwright install`)
 
-## What's in this repo
+## Setup
 
-```
-docs/
-  Short-Brief.pdf                 ← 1-page summary (start here)
-  Project-Brief.pdf               ← the FULL spec: requirements, checklists,
-                                    evidence rules, grading criteria (read all of it)
-  Sample-Applications-Guide.pdf   ← index of the 10 test forms
-samples/
-  Sample-01 … Sample-10           ← 10 completed application forms (PDF).
-                                    Fictional participants, REAL public provider
-                                    websites — your tool has genuine evidence to find.
-AI-CONVERSATION.md                ← placeholder — you MUST replace this (see below)
+```bash
+pip3 install openai pyyaml pypdf playwright
+playwright install
+export OPENAI_API_KEY="your-key-here"
 ```
 
-## How to do the challenge
+## Running the tool
 
-1. Click **"Use this template"** (top right) to create **your own copy** of this repo.
-2. **Your repo must be PUBLIC.** Private repos cannot be reviewed and count as no submission.
-3. Read `docs/Short-Brief.pdf`, then `docs/Project-Brief.pdf` in full — Section 5 (what a website can and can't prove) is the crux of the evaluation.
-4. Build the tool. CLI, web UI, or chat interface — your choice; justify it. Use any AI models/tools/frameworks you want.
-5. Run it end-to-end on **at least 3** of the forms in `samples/` and commit the output report packages (report + evidence captures).
-6. Replace `AI-CONVERSATION.md` with your **exported AI conversation** (Claude Code, Cursor, ChatGPT, etc.), including the **list of tools and models you used** at the top. See the file for the required format.
-7. Push everything, then submit your repo link at:
+Run the full pipeline (extract → verify → report) on a sample:
 
-**→ https://f5globaltalent.com/careers/preapproval-tool-test-001**
+```bash
+python3 src/run_pipeline.py "samples/Sample-01---Community-Class-GallopNYC.pdf" community_classes
+```
 
-Use the **same email address you applied to the F5 AI Specialist Pool with** — that's how we match your submission to your profile. You'll also record a short 60-second intro video on the submission page.
+Category keys match the filenames in `config/categories/`:
+`community_classes`, `coaching`, `memberships`, `hri`, `otps`, `transition_program`, `appeals`
 
-## What you deliver (authoritative list)
+Output is saved to:
+- `output/<name>_extracted.json` — structured fields pulled from the form
+- `output/verification_<timestamp>.json` — per-item verification results
+- `output/evidence/` — all screenshots (whole-page + targeted)
+- `output/reports/report_<participant>_<timestamp>.md` — the final report
 
-1. **The working tool** in this repo — runs the full workflow on at least 3 samples.
-2. **The repo itself**, organized the way you'd want a team to inherit it: README with run instructions a non-technical reviewer could follow, clear structure, config-driven checklists, at least one committed sample output report with its evidence captures, a note on how to add a new form/checklist, and a statement of limitations/assumptions.
-3. **`AI-CONVERSATION.md`** — your real AI conversation + the tools/models list.
+## How to add a new form/checklist
 
-*(Where this README and the Project Brief PDF differ on deliverables — e.g. the brief mentions a walkthrough video — this README is authoritative: the AI conversation file plus the intro video on the submission page replace it.)*
+1. Create a new file in `config/categories/<new_category>.yaml`
+2. List the fields to extract from that form under `fields:`
+3. List each checklist item under `checklist:`, marking each `verifiable: website` or `verifiable: internal`
+4. Run the pipeline with your new category key — no code changes needed
 
-## Rules
+## Limitations & assumptions
 
-- Repo stays **public** from submission until you hear back from us.
-- **No fabricated evidence.** Screenshots and citations must be real captures of what the site showed. "Not Found / Needs Review" is a correct answer; a hallucinated finding is an automatic fail.
-- Do not commit API keys or secrets. All sample data is synthetic — commit it freely.
-- Your own work, with AI assistance expected and encouraged — that's the point. The AI conversation shows us how you actually work.
+- **Website access is not guaranteed.** Some provider sites (notably Amazon)
+cat README.md | head -20
+cat README.md | head -20
+cat > README.md << 'MDEOF'
+# Pre-Approval Website-Verification Tool
 
-Good luck. We're looking at how you think, not how polished the UI is.
+An AI-assisted tool that reads completed pre-approval application forms (PDF), verifies the request against the provider's public website, captures date-stamped evidence, and produces a review-ready report — for a human Pre-Approvals Reviewer to make the final decision.
+
+**This tool does not approve or deny anything.** It gathers evidence and flags items for review.
+
+## How it works
+
+1. **Extract** — reads a PDF application, pulls structured fields (participant, provider, item, fee, checklist answers) using an LLM.
+2. **Verify** — visits the provider's website, checks each website-verifiable checklist item, and captures evidence (whole-page screenshot + a labeled, highlighted screenshot per confirmed item), each burned with a visible timestamp and URL.
+3. **Report** — generates a markdown report: request summary, rate comparison, per-criterion findings table, internal (non-website-verifiable) items, and the evidence appendix.
+
+## Requirements
+
+- Python 3.12+
+- An OpenAI API key set as `OPENAI_API_KEY`
+- Playwright with Chromium installed (`pip3 install playwright && playwright install`)
+
+## Setup
+
+```bash
+pip3 install openai pyyaml pypdf playwright
+playwright install
+export OPENAI_API_KEY="your-key-here"
+```
+
+## Running the tool
+
+Run the full pipeline (extract → verify → report) on a sample:
+
+```bash
+python3 src/run_pipeline.py "samples/Sample-01---Community-Class-GallopNYC.pdf" community_classes
+```
+
+Category keys match the filenames in `config/categories/`:
+`community_classes`, `coaching`, `memberships`, `hri`, `otps`, `transition_program`, `appeals`
+
+Output is saved to:
+- `output/<name>_extracted.json` — structured fields pulled from the form
+- `output/verification_<timestamp>.json` — per-item verification results
+- `output/evidence/` — all screenshots (whole-page + targeted)
+- `output/reports/report_<participant>_<timestamp>.md` — the final report
+
+## How to add a new form/checklist
+
+1. Create a new file in `config/categories/<new_category>.yaml`
+2. List the fields to extract from that form under `fields:`
+3. List each checklist item under `checklist:`, marking each `verifiable: website` or `verifiable: internal`
+4. Run the pipeline with your new category key — no code changes needed
+
+## Limitations & assumptions
+
+- **Website access is not guaranteed.** Some provider sites (notably Amazon) serve anti-bot challenge pages or 404s to automated browsers. The tool detects these cases and degrades to "Needs Review" rather than fabricating findings. The `exclusion_list` check for HRI/OTPS runs as a deterministic code check against the form's stated item text, so it works even when the live page can't be read.
+- **"Fees identical for OPWDD/non-OPWDD"** and similar negative claims are rarely provable from a public website (a site can fail to show a special price, but can't prove one doesn't exist elsewhere) — these are intentionally marked "Needs Review" rather than "Met" in most cases.
+- **Appeals** currently re-run only a small appeal-specific checklist rather than dynamically loading the original category's full checklist. A production version would load both configs and merge them.
+- **No OCR** — this version assumes forms are text-based PDFs (all 10 samples are). Scanned/image-only forms would need an OCR step added to `extract.py`.
+- **No internal system integration** — budget approval, Life Plan matching, and other "internal" items are always flagged for the human reviewer, never inferred.
+- **This is a take-home evaluation build**, not production software: no authentication, no queuing/retry logic for flaky sites, no test suite, and evidence storage is local disk rather than an audit-grade document store.
+
+## Sample outputs
+
+Three fully-run examples are committed under `output/`:
+- Sample-01 (Community Class, GallopNYC) — clean case, most items Met
+- Sample-07 (HRI, Laptop) — demonstrates the exclusion-list catch
+- Sample-10 (Appeal, Gracie Barra) — demonstrates the appeals category
+
+## Human-in-the-loop
+
+A human Pre-Approvals Reviewer always makes the final approve/deny decision. Every report ends with an explicit statement to that effect.

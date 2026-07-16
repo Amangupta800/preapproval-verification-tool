@@ -1,0 +1,28 @@
+{
+  "url": "https://www.amazon.com/dp/B08N5WRWNW",
+  "capture_timestamp": "2026-07-16_06-29-56",
+  "full_page_screenshot": "output/evidence/full_page_2026-07-16_06-29-56.png",
+  "verification_results": [
+    {
+      "id": "item_exists",
+      "status": "Not Met",
+      "note": "The page does not show any item or price.",
+      "supporting_quote": "Click the button below to continue shopping",
+      "evidence_screenshot": null
+    },
+    {
+      "id": "not_excluded",
+      "status": "Needs Review",
+      "note": "The page does not provide details about the item to determine exclusion.",
+      "supporting_quote": "Click the button below to continue shopping",
+      "evidence_screenshot": null
+    },
+    {
+      "id": "safety_match",
+      "status": "Needs Review",
+      "note": "No safety features or item details are disclosed on the page.",
+      "supporting_quote": "Click the button below to continue shopping",
+      "evidence_screenshot": null
+    }
+  ]
+}

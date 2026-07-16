@@ -1,0 +1,32 @@
+{
+  "participant_name": "Aaron M.",
+  "participant_age": "26",
+  "fi_coordinator_name": "Leah Stern",
+  "broker_name": "Michael Ross",
+  "class_name": "Recreational Group Riding",
+  "provider_name": "GallopNYC",
+  "website_url": "https://gallopnyc.org/recreational-riding",
+  "subject_area": "Recreational Horseback Riding",
+  "fee_per_session": "$80 per 30-minute session",
+  "duration_per_session": "30 minutes",
+  "checklist_answers": {
+    "Are community classes currently approved in the budget?": "YES",
+    "Does the class provide opportunity for community inclusion?": "YES",
+    "Does the class accommodate the individual\u2019s health and/or safety needs?": "YES",
+    "Does the class increase independence or substitute for human assistance?": "YES",
+    "Is the class provided exclusively for the benefit of the participant?": "NO",
+    "Is the class open to and attended by the broader public?": "YES",
+    "Does the class have published fees?": "YES",
+    "Are the fees identical for both OPWDD and non-OPWDD individuals?": "YES",
+    "Is the class subject based? (Art, Dance, Martial Arts, Cooking)": "YES",
+    "Does the class provide college credits?": "NO",
+    "Is the class clinical in nature? (therapy)": "NO",
+    "Is the class given in a setting accessed only by people with Developmental Disabilities?": "NO",
+    "Is the class run by OPWDD or a provider-agency staff acting in their official capacities?": "NO",
+    "Is the class located on grounds where OPWDD services are normally provided?": "NO",
+    "Does the class duplicate any Medicaid state plan or HCBS waiver services (or entity that delivers such)?": "NO",
+    "Does the class duplicate services given through Board of Education for school-aged children?": "NO",
+    "Is there a published schedule of the class?": "YES",
+    "Is the class being reimbursed directly?": "NO"
+  }
+}

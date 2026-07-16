@@ -1,0 +1,22 @@
+{
+  "url": "https://graciebarra.com",
+  "capture_timestamp": "2026-07-16_06-35-41",
+  "full_page_screenshot": "output/evidence/full_page_2026-07-16_06-35-41.png",
+  "bot_blocked": false,
+  "verification_results": [
+    {
+      "id": "rerun_original_checklist",
+      "status": "Needs Review",
+      "note": "The original category's details are not provided, so I cannot re-run the checks.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    },
+    {
+      "id": "addresses_denial_reason",
+      "status": "Not Met",
+      "note": "The website does not list the $30 group-class rate.",
+      "supporting_quote": "GRACIE BARRA JIU-JITSU FOR EVERYONE\u00ae",
+      "evidence_screenshot": null
+    }
+  ]
+}

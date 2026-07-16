@@ -1,0 +1,39 @@
+category: otps
+display_name: "Other Than Personal Services (OTPS)"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - item_name
+  - provider_name
+  - website_url
+  - item_price
+
+checklist:
+  - id: item_exists
+    label: "Item exists at the linked page, with a visible price"
+    verifiable: website
+
+  - id: not_excluded
+    label: "Item is plausibly NOT on the OTPS exclusion list (cable TV, common household supplies, rental cars, legal fees, co-pays, experimental therapies)"
+    verifiable: website
+
+  - id: budget_approved
+    label: "OTPS currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
+
+program_caps:
+  annual_cap: 3000
+
+exclusion_list:
+  - cable tv
+  - common household supplies
+  - rental cars
+  - legal fees
+  - co-pays
+  - experimental therapies

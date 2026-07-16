@@ -1,0 +1,32 @@
+category: appeals
+display_name: "Pre-Approval Appeal"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - original_category   # category of the original denied request
+  - denial_reason
+  - appeal_justification
+  - provider_name
+  - website_url
+  - fee
+
+checklist:
+  - id: rerun_original_checklist
+    label: "Re-run the website-verifiable checks for the original category (e.g. Community Classes)"
+    verifiable: website
+    note: "Load the original_category's config and re-execute its website-verifiable items"
+
+  - id: addresses_denial_reason
+    label: "Evidence specifically supports or refutes the stated denial reason"
+    verifiable: website
+
+  - id: budget_approved
+    label: "Category currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
+

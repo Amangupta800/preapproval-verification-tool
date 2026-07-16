@@ -1,0 +1,16 @@
+{
+  "participant_name": "Yosef B.",
+  "participant_age": "22",
+  "fi_coordinator_name": "Leah Stern",
+  "broker_name": "Sarah Klein",
+  "original_category": null,
+  "denial_reason": "Published fees could not be verified on the provider\u2019s website.",
+  "appeal_justification": "Attached is a rate sheet obtained from the gym confirming the $30 group-class rate. The class is open to the public and subject-based (martial arts), consistent with OPWDD community-class guidelines. We respectfully request reconsideration of the denial.",
+  "provider_name": "Gracie Barra",
+  "website_url": "https://graciebarra.com",
+  "fee": "$30 per session",
+  "checklist_answers": {
+    "Approved": null,
+    "Not Approved": null
+  }
+}

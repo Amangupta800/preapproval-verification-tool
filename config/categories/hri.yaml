@@ -1,0 +1,44 @@
+category: hri
+display_name: "Household Related Items"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - item_name
+  - provider_name
+  - website_url   # product link
+  - item_price
+  - safety_features_described
+
+checklist:
+  - id: item_exists
+    label: "Item exists at the linked page, with a visible price"
+    verifiable: website
+
+  - id: not_excluded
+    label: "Item is plausibly NOT on the exclusion list (cell phone, computer, vehicle, medical device, pill dispenser)"
+    verifiable: website
+
+  - id: safety_match
+    label: "Safety features described on the form are supported by the product page"
+    verifiable: website
+
+  - id: budget_approved
+    label: "HRI currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
+
+program_caps:
+  annual_cap: 1500
+  approval_validity_months: 3
+
+exclusion_list:
+  - cell phone
+  - computer
+  - vehicle
+  - medical device
+  - pill dispenser

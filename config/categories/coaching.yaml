@@ -1,0 +1,43 @@
+category: coaching
+display_name: "Coaching (for Parents/Spouse)"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - course_name
+  - provider_name
+  - website_url
+  - fee_per_class
+  - class_type   # group or private
+
+checklist:
+  - id: published_fees
+    label: "Published fees exist for the course/class"
+    verifiable: website
+
+  - id: fee_sanity_check
+    label: "Fee is within program cap (≤$55/group class or ≤$111/private class, $500/year total)"
+    verifiable: website
+
+  - id: genuine_education
+    label: "Content is a genuine educational/coaching opportunity (not lodging/travel)"
+    verifiable: website
+
+  - id: adult_participant
+    label: "Participant is 18+ (adults-only category)"
+    verifiable: internal
+
+  - id: budget_approved
+    label: "Coaching currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
+
+program_caps:
+  group_class: 55
+  private_class: 111
+  annual_cap: 500
+

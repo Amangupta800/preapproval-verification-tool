@@ -1,0 +1,29 @@
+{
+  "url": "https://www.amazon.com/dp/B08N5WRWNW",
+  "capture_timestamp": "2026-07-16_06-33-10",
+  "full_page_screenshot": "output/evidence/full_page_2026-07-16_06-33-10.png",
+  "bot_blocked": false,
+  "verification_results": [
+    {
+      "id": "item_exists",
+      "status": "Needs Review",
+      "note": "It is unclear if the item exists or has a visible price due to missing page text.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    },
+    {
+      "id": "not_excluded",
+      "status": "Not Met",
+      "note": "Item description on the form ('laptop computer') matches excluded category: computer. This item plausibly falls under the program's exclusion list.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    },
+    {
+      "id": "safety_match",
+      "status": "Needs Review",
+      "note": "No information on safety features is present.",
+      "supporting_quote": null,
+      "evidence_screenshot": null
+    }
+  ]
+}

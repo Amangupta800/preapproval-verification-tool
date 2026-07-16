@@ -1,0 +1,23 @@
+{
+  "participant_name": "Esther G.",
+  "participant_age": "33",
+  "fi_coordinator_name": "Leah Stern",
+  "broker_name": "Sarah Klein",
+  "item_name": "Laptop computer",
+  "provider_name": null,
+  "website_url": "https://www.amazon.com/dp/B08N5WRWNW",
+  "item_price": null,
+  "safety_features_described": "N/A",
+  "checklist_answers": {
+    "Is Household-Related Items approved in the budget?": "YES",
+    "Is the individual over 18?": "YES",
+    "Is the item related to a need or goal identified in the Life Plan?": "YES",
+    "Will the item increase independence, or substitute for human assistance?": "YES",
+    "Does the item increase safety of the participant in their home environment?": "YES",
+    "Is the item exclusively needed for the participant?": "YES",
+    "Does the item increase the participant\u2019s health and safety?": "YES",
+    "Does the individual live in their own home? (for Household support only)": "YES",
+    "Was the same item bought already in this budget year?": "NO",
+    "Can the item be funded through other sources?": "NO"
+  }
+}

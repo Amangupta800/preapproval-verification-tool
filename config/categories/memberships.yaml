@@ -1,0 +1,32 @@
+category: memberships
+display_name: "Health-Club / Organizational Membership"
+fields:
+  - participant_name
+  - participant_age
+  - fi_coordinator_name
+  - broker_name
+  - organization_name
+  - website_url
+  - membership_fee
+  - fee_frequency   # yearly or monthly
+
+checklist:
+  - id: open_to_public
+    label: "Organization is open to the public — not a private/invitation-only club"
+    verifiable: website
+
+  - id: published_fee
+    label: "Membership fee is published"
+    verifiable: website
+
+  - id: fee_match
+    label: "Published fee amount matches form's stated fee (yearly/monthly)"
+    verifiable: website
+
+  - id: budget_approved
+    label: "Memberships currently approved in the budget"
+    verifiable: internal
+
+  - id: life_plan_match
+    label: "Matches a valued outcome in the participant's Life Plan"
+    verifiable: internal
